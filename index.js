@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 8000;
-
+const cookieParser = require("cookie-parser");
 const {logReqRes} = require('./middleware/index'); 
 
 const { connectDB } = require('./connection');
@@ -9,6 +9,7 @@ const userRoute = require("./routes/userRoutes");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // Connect to the database
 connectDB("mongodb://localhost:27017/authdb")

@@ -1,4 +1,6 @@
 const User = require('../models/usersModel');
+const { v4 : uuidv4 } = require('uuid');
+const authService = require("../service/auth");
 
 async function handleUserRegistration(req, res) {
     const { name, email, password } = req.body;
@@ -16,7 +18,15 @@ async function handleUserLogin(req, res){
 
     const user = await User.findOne({email,password});
     if(!user ) return res.status(555).json({message : "Enter Correct Credentials"});
+    
+    //for statefull authentication
+    // const sessionId = uuidv4();
+    // authService.setUser(sessionId, user);
+    
+    //for stateless authentication using jwt
+    const token = authService.setUser(user);
 
+    res.cookie("uid", token);
     return res.status(200).json({message : "Login Succesfull"});
 }
 

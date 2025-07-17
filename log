@@ -8,3 +8,10 @@
  1752686128817 : ::1 GET : / / 200
  1752686165849 : ::1 DELETE : /6877d720b35ceb0cdd9dd36d /6877d720b35ceb0cdd9dd36d 200
  1752686171802 : ::1 GET : / / 200
+ 1752733551837 : ::1 GET : / / 200
+ 1752733558633 : ::1 GET : /login /login 200
+ 1752733581082 : ::1 POST : /login /login 200
+ 1752733584199 : ::1 GET : /login /login 200
+ 1752733588985 : ::1 GET : /.well-known/appspecific/com.chrome.devtools.json /.well-known/appspecific/com.chrome.devtools.json 200
+ 1752733620365 : ::1 POST : /login /login 200
+ 1752735041118 : ::1 POST : /login /login 200
